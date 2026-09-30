@@ -1,0 +1,5 @@
+node_modules/
+coverage/
+*.log
+transitioned.json
+eco-report.md

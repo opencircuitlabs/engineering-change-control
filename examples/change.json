@@ -1,0 +1,16 @@
+{
+  "schemaVersion":1,"id":"ECO-2026-014","title":"Increase regulator current margin","reason":"CAPA-2026-001","requestedBy":"power-lead","openedAt":"2026-10-01T09:00:00Z","product":"sensor-node","status":"approval","changeClass":"minor","currentRevision":"1.4.2","proposedRevision":"1.5.0",
+  "affectedArtifacts":[
+    {"id":"schematic","type":"design","fromVersion":"A1","toVersion":"A2","change":"replace regulator and compensation","direct":true,"owners":["hardware"]},
+    {"id":"pcb","type":"design","fromVersion":"A1","toVersion":"A2","change":"reroute regulator area","direct":false,"owners":["layout"]},
+    {"id":"bom","type":"manufacturing","fromVersion":"1.4","toVersion":"1.5","change":"new regulator MPN","direct":false,"owners":["supply"]},
+    {"id":"fct","type":"test","fromVersion":"3.1","toVersion":"3.2","change":"add RF load-step test","direct":false,"owners":["test"]}
+  ],
+  "dependencies":[{"from":"schematic","to":"pcb","relation":"implements"},{"from":"schematic","to":"bom","relation":"selects"},{"from":"pcb","to":"fct","relation":"verified-by"}],
+  "impacts":{"safety":"reviewed-no-change","regulatory":"no-change","formFitFunction":"unchanged","interchangeability":true,"supply":"changed","manufacturing":"changed","firmware":"unchanged"},
+  "risk":{"severity":7,"likelihood":3,"detection":3},
+  "approvals":[{"role":"hardware","required":true,"status":"approved","by":"hw-manager","at":"2026-10-03"},{"role":"quality","required":true,"status":"approved","by":"quality-manager","at":"2026-10-03"},{"role":"manufacturing","required":true,"status":"pending"}],
+  "implementationTasks":[{"id":"T1","description":"update schematic","owner":"hardware","status":"open"},{"id":"T2","description":"update PCB and BOM","owner":"layout","status":"open"}],
+  "verification":[{"id":"V1","requirement":"no brownout at peak RF load","method":"load-step FCT","status":"planned","evidenceIds":[]}],
+  "evidence":[],"effectivity":{"type":"serial","value":"SN01000","oldStockDisposition":"rework"},"history":[],"release":null
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@opencircuitlabs/engineering-change-control",
+  "version": "1.0.0",
+  "description": "Auditable electronics ECO impact, approvals, revisions, verification, effectivity, and release control",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "bin": {"engineering-change-control": "src/cli.js"},
+  "scripts": {"test": "node --test", "check": "npm test"},
+  "engines": {"node": ">=18"},
+  "license": "MIT"
+}
